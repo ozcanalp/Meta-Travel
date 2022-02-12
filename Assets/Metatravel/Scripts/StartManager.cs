@@ -5,20 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class StartManager : MonoBehaviour
 {
+    [SerializeField] string url;
     [SerializeField] private GameObject[] rooms;
-    private void Start()
+    [SerializeField] Transform character;
+    private void Awake()
     {
-        string url = ReadURL();
+        if (url == "" || url == null)
+            url = ReadURL();
 
         Transform toGoTransform = GetRoomTransform(int.Parse(url));
-        Debug.Log(toGoTransform);
+        Debug.Log(toGoTransform.position);
+        character.position = toGoTransform.position;
     }
 
     string ReadURL()
     {
         string url = Application.absoluteURL;
         string parameters = url.Substring(Application.absoluteURL.IndexOf("?") + 1);
-        return parameters.Split(new char[] { '&', '=' })[1];
+        string[] splittedParameters = parameters.Split(new char[] { '&', '=' });
+
+        if (splittedParameters.Length > 0)
+            return parameters.Split(new char[] { '&', '=' })[1];
+        else
+            return "0";
+
     }
 
     Transform GetRoomTransform(int roomId)
