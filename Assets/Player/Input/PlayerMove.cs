@@ -10,6 +10,10 @@ public class PlayerMove : MonoBehaviour
     public CharacterController controller;
     private float walkSpeed = 12f;
 
+    private void Start() {
+        
+    }
+
     public void OnMoveInput(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
