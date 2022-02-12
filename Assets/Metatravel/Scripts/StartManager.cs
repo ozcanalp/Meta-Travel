@@ -9,8 +9,9 @@ public class StartManager : MonoBehaviour
     private void Start()
     {
         string url = ReadURL();
-        
+
         Transform toGoTransform = GetRoomTransform(int.Parse(url));
+        Debug.Log(toGoTransform);
     }
 
     string ReadURL()
@@ -22,6 +23,9 @@ public class StartManager : MonoBehaviour
 
     Transform GetRoomTransform(int roomId)
     {
-        return rooms[roomId].transform;
+        if (roomId < rooms.Length && 0 < roomId)
+            return rooms[roomId].transform;
+        else
+            return rooms[0].transform;
     }
 }
