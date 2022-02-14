@@ -6,6 +6,12 @@ using UnityEngine.InputSystem;
 public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] GameObject mainCamera;
+    private Vector3 startPosition;
+    private Transform targetPosition;
+
+    private bool isChangePosition = false;
+    private float turnSpeed = 2;
+    private Quaternion defaultRotation;
 
 
     public void OnInteractionInput(InputAction.CallbackContext context)
@@ -22,8 +28,22 @@ public class PlayerInteraction : MonoBehaviour
                 Debug.Log("2. button için url yi buraya yapýþtýr.");
             else if (mainCamera.GetComponent<CameraRaycast>().whichButton.CompareTag("Computer"))
             {
-
+                startPosition = mainCamera.transform.position;
+                targetPosition = mainCamera.GetComponent<CameraRaycast>().whichButton.transform;
+                defaultRotation = mainCamera.GetComponent<CameraRaycast>().whichButton.transform.rotation;
+                isChangePosition = true;
             }
+        }
+    }
+
+    private void Update()
+    {
+        if (isChangePosition)
+        {
+            this.GetComponent<PlayerMenu>().isMenuOpen = true;
+            this.GetComponent<PlayerMenu>().isComputerUIOpen = true;
+            mainCamera.transform.rotation = Quaternion.Slerp(mainCamera.transform.rotation, Quaternion.Euler(15,defaultRotation.eulerAngles.y - 180f, defaultRotation.eulerAngles.z), turnSpeed * Time.deltaTime);
+            mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, new Vector3(targetPosition.position.x, targetPosition.position.y, targetPosition.position.z), 2 * Time.deltaTime);
         }
     }
 }

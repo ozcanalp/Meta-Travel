@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ReceptionistSkills : MonoBehaviour
 {
     private float distance1;
     private GameObject receptionist1;
     private Quaternion defaultRotation1;
-
-    [SerializeField] GameObject recep;
 
     private float turnSpeed = 2;
 
