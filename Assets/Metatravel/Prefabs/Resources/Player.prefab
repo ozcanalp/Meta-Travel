@@ -289,7 +289,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 282637a7cc7e9924995e33e60c17c2a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recep: {fileID: 0}
 --- !u!1 &1974364742
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +870,8 @@ GameObject:
   - component: {fileID: 1882645065}
   - component: {fileID: 5588714359924772066}
   - component: {fileID: -3874960491157426429}
+  - component: {fileID: 3504238351252889752}
+  - component: {fileID: 2818932515592574717}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -889,8 +890,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2116467053316827299}
   - {fileID: 2116467052708200758}
+  - {fileID: 2116467053316827299}
   - {fileID: 2390844766185773709}
   - {fileID: 7942505563353606273}
   - {fileID: 1638677266}
@@ -1017,6 +1018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 254b6612fb9a65f4895f79db72517fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PV: {fileID: 5588714359924772066}
 --- !u!114 &1882645060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1030,6 +1032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMenuOpen: 0
+  isComputerUIOpen: 0
   cursorManager: {fileID: 1567120250748513496}
 --- !u!114 &1882645065
 MonoBehaviour:
@@ -1083,6 +1086,38 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &3504238351252889752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116467052677308077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6315ea26bb99b14488075a9c822e9b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  isHitButton: 0
+  crossHair: {fileID: 630743814506332864}
+  whichButton: {fileID: 0}
+--- !u!114 &2818932515592574717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116467052677308077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe74cc05132cfc438b3e56796f96b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PV: {fileID: 5588714359924772066}
+  playerCam: {fileID: 2116467052708200756}
 --- !u!1 &2116467052708200745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,8 +1129,6 @@ GameObject:
   - component: {fileID: 2116467052708200758}
   - component: {fileID: 2116467052708200756}
   - component: {fileID: 2116467052708200759}
-  - component: {fileID: 2116467052708200757}
-  - component: {fileID: 738799092}
   m_Layer: 7
   m_Name: Main Camera
   m_TagString: Untagged
@@ -1115,7 +1148,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2116467052677308075}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &2116467052708200756
 Camera:
@@ -1168,37 +1201,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116467052708200745}
   m_Enabled: 1
---- !u!114 &2116467052708200757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2116467052708200745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe74cc05132cfc438b3e56796f96b42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTransform: {fileID: 2116467052677308075}
---- !u!114 &738799092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2116467052708200745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6315ea26bb99b14488075a9c822e9b80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  isHitButton: 0
-  crossHair: {fileID: 630743814506332864}
-  whichButton: {fileID: 0}
 --- !u!1 &2116467053316827298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,7 +1232,7 @@ Transform:
   - {fileID: 3006009723276938363}
   - {fileID: 9130831074652272525}
   m_Father: {fileID: 2116467052677308075}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3441258007797430885
 GameObject:
