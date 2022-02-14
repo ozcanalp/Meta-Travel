@@ -5,22 +5,52 @@ using UnityEngine.SceneManagement;
 
 public class StartManager : MonoBehaviour
 {
-    [SerializeField] string url;
+    public static StartManager Instance { get; private set; }
+
+    string url;
     [SerializeField] private GameObject[] rooms;
-    [SerializeField] Transform character;
+
     private void Awake()
     {
-        if (url == "" || url == null)
-            url = ReadURL();
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
-        Transform toGoTransform = GetRoomTransform(int.Parse(url));
-        Debug.Log(toGoTransform.position);
-        character.position = toGoTransform.position;
+    public Transform GetSpawnTransform()
+    {
+        string url;
+
+#if !UNITY_EDITOR && UNITY_WEBGL
+        url = ReadURL();
+#else
+        url = Random.Range(0, rooms.Length).ToString();
+#endif
+        return GetRoomTransform(ProcessURL(url));
+    }
+
+    int ProcessURL(string url)
+    {
+        if (int.TryParse(url, out int parsedUrl))
+            return parsedUrl;
+        else
+            return 0;
+
     }
 
     string ReadURL()
     {
         string url = Application.absoluteURL;
+
+        if (url.Length < 0 && url.Length % 2 != 0)
+            return "0";
+
         string parameters = url.Substring(Application.absoluteURL.IndexOf("?") + 1);
         string[] splittedParameters = parameters.Split(new char[] { '&', '=' });
 
@@ -28,7 +58,6 @@ public class StartManager : MonoBehaviour
             return parameters.Split(new char[] { '&', '=' })[1];
         else
             return "0";
-
     }
 
     Transform GetRoomTransform(int roomId)
