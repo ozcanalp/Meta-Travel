@@ -488,10 +488,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8030742440987672446, guid: 33989f124fdf3054ea22e34e9474fac3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8030742440987672447, guid: 33989f124fdf3054ea22e34e9474fac3, type: 3}
       propertyPath: rooms.Array.data[0]
       value: 

@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using Photon.Pun;
 
 public class SpawnManager : MonoBehaviour
 {
     public static SpawnManager Instance { get; private set; }
 
     string url;
+    [SerializeField] GameObject player;
     [SerializeField] private GameObject[] rooms;
 
     private void Awake()
@@ -23,7 +24,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    public Transform GetSpawnTransform()
+    public void SpawnCharacter()
     {
         string url;
 
@@ -32,7 +33,9 @@ public class SpawnManager : MonoBehaviour
 #else
         url = Random.Range(0, rooms.Length).ToString();
 #endif
-        return GetRoomTransform(ProcessURL(url));
+        Transform spawnTransform = GetRoomTransform(ProcessURL(url));
+
+        PhotonNetwork.Instantiate(player.name, spawnTransform.position, spawnTransform.rotation,0);
     }
 
     int ProcessURL(string url)

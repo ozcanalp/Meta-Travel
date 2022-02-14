@@ -26,5 +26,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
+
+        SpawnManager.Instance.SpawnCharacter();
     }
 }

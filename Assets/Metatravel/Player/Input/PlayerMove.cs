@@ -2,21 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Photon.Pun;
 
 public class PlayerMove : MonoBehaviour
 {
+    [SerializeField] PhotonView PV;
     private Vector2 move;
     private Vector3 movement;
     private float walkSpeed = 6f;
     private Rigidbody rigidBody;
 
-    private void Start() {
+    private void Start()
+    {
         rigidBody = GetComponent<Rigidbody>();
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
     {
-        move = context.ReadValue<Vector2>();      
+        move = context.ReadValue<Vector2>();
     }
 
     private void FixedUpdate()
@@ -24,7 +27,10 @@ public class PlayerMove : MonoBehaviour
         if (this.GetComponent<PlayerMenu>().isMenuOpen)
             return;
 
-        Movements();
+        if (PV.IsMine)
+        {
+            Movements();
+        }
     }
 
     private void Movements()
@@ -34,5 +40,5 @@ public class PlayerMove : MonoBehaviour
         //controller.Move(movement * walkSpeed * Time.deltaTime);
         rigidBody.MovePosition(transform.position + movement * walkSpeed * Time.deltaTime);
     }
-    
+
 }
