@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1638677266}
   - component: {fileID: 1638677267}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ReceptionistManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 282637a7cc7e9924995e33e60c17c2a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  receptionist: {fileID: 0}
 --- !u!1 &630743814506332864
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,7 +54,7 @@ GameObject:
   - component: {fileID: 732007069564875732}
   - component: {fileID: 2621865917104095655}
   - component: {fileID: 4878445578198175833}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Crooshair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +129,7 @@ GameObject:
   - component: {fileID: 8409696753851770044}
   - component: {fileID: 4039008570843301858}
   - component: {fileID: 1748190378326701203}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7942505563353606273}
   - component: {fileID: 8687450586787911727}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CursorManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +254,7 @@ GameObject:
   - component: {fileID: 6002667733990556527}
   - component: {fileID: 5552214109808008738}
   - component: {fileID: 6440175918526535192}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +335,7 @@ GameObject:
   - component: {fileID: 7946081094689984414}
   - component: {fileID: 637025079070777110}
   - component: {fileID: 8118643568692124603}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +416,7 @@ GameObject:
   - component: {fileID: 2116467052588569893}
   - component: {fileID: 2116467052588569888}
   - component: {fileID: 2116467052588569891}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,7 +501,7 @@ GameObject:
   - component: {fileID: 2116467052677308072}
   - component: {fileID: 1882645060}
   - component: {fileID: 1882645065}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -688,7 +687,7 @@ GameObject:
   - component: {fileID: 2116467052708200759}
   - component: {fileID: 2116467052708200757}
   - component: {fileID: 738799092}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -800,7 +799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2116467053316827299}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Avatar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -833,7 +832,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9130831074652272525}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -866,7 +865,7 @@ GameObject:
   - component: {fileID: 3006009723276938363}
   - component: {fileID: 8165632478073193685}
   - component: {fileID: 2862151552740904500}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -949,7 +948,7 @@ GameObject:
   - component: {fileID: 2396161877328710528}
   - component: {fileID: 3980217115563476413}
   - component: {fileID: 4644826775896961042}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1031,7 +1030,7 @@ GameObject:
   - component: {fileID: 5242269663364680476}
   - component: {fileID: 2535116303736201858}
   - component: {fileID: 8518108886995039063}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1075,7 +1074,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
