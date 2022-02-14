@@ -7,6 +7,7 @@ TagManager:
   - Button1
   - Button
   - Button2
+  - Computer
   layers:
   - Default
   - TransparentFX
@@ -14,8 +15,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Button
-  - 
+  - Interactable
+  - Player
   - 
   - 
   - 

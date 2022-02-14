@@ -6,11 +6,17 @@ using UnityEngine.InputSystem;
 public class PlayerMenu : MonoBehaviour
 {
     public bool isMenuOpen = false;
+    private bool isComputerUIOpen = false;
     [SerializeField] GameObject cursorManager;
 
 
     public void OnMenuInput(InputAction.CallbackContext context)
     {
+        if (isComputerUIOpen)
+        {
+            return;
+        }
+
         if(context.performed && !isMenuOpen)
         {
             cursorManager.GetComponent<CursorHide>().HideAndCenterCursor(false);
