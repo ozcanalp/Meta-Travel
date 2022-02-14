@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartManager : MonoBehaviour
+public class SpawnManager : MonoBehaviour
 {
-    public static StartManager Instance { get; private set; }
+    public static SpawnManager Instance { get; private set; }
 
     string url;
     [SerializeField] private GameObject[] rooms;
