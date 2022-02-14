@@ -14,7 +14,10 @@ public class PlayerInteraction : MonoBehaviour
         {
 
             if (mainCamera.GetComponent<CameraRaycast>().whichButton.CompareTag("Button1"))
+            {
+                //mainCamera.GetComponent<CameraRaycast>().whichButton.GetComponent<ButtonPressed>().Pressed();
                 Debug.Log("1. button için url yi buraya yapýþtýr.");
+            }
             else if (mainCamera.GetComponent<CameraRaycast>().whichButton.CompareTag("Button2"))
                 Debug.Log("2. button için url yi buraya yapýþtýr.");
         }
