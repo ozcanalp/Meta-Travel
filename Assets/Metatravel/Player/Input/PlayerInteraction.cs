@@ -20,6 +20,10 @@ public class PlayerInteraction : MonoBehaviour
             }
             else if (mainCamera.GetComponent<CameraRaycast>().whichButton.CompareTag("Button2"))
                 Debug.Log("2. button için url yi buraya yapýþtýr.");
+            else if (mainCamera.GetComponent<CameraRaycast>().whichButton.CompareTag("Computer"))
+            {
+
+            }
         }
     }
 }
