@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMenu : MonoBehaviour
 {
     public bool isMenuOpen = false;
-    private bool isComputerUIOpen = false;
+    public bool isComputerUIOpen = false;
     [SerializeField] GameObject cursorManager;
 
 
