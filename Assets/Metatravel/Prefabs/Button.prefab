@@ -91,7 +91,6 @@ GameObject:
   m_Component:
   - component: {fileID: 336157154519704334}
   - component: {fileID: 2064437862}
-  - component: {fileID: 2098169835416399105}
   m_Layer: 6
   m_Name: Button
   m_TagString: Button1
@@ -128,19 +127,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1994505, y: 0.14063728, z: 0.1966896}
   m_Center: {x: -0.0006079674, y: -0.0067996383, z: 0.0016269684}
---- !u!114 &2098169835416399105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2142071820846018550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d3d1ee11c3f2d4f8b97c572ed4d3a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  redButton: {fileID: 7780936921112116081}
 --- !u!1 &7780936921112116081
 GameObject:
   m_ObjectHideFlags: 0
