@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CameraRaycast : MonoBehaviour
 {
-    private float raycastLength = 7;
+    private float raycastLength = 5;
     private RaycastHit raycastHit;
     [SerializeField] LayerMask layerMask;
     public bool isHitButton;
