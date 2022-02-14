@@ -1104,6 +1104,7 @@ MonoBehaviour:
   isHitButton: 0
   crossHair: {fileID: 630743814506332864}
   whichButton: {fileID: 0}
+  mainCamera: {fileID: 2116467052708200745}
 --- !u!114 &2818932515592574717
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,11 +11,12 @@ public class CameraRaycast : MonoBehaviour
     public bool isHitButton;
     [SerializeField] GameObject crossHair;
     public GameObject whichButton;
+    [SerializeField] GameObject mainCamera;
 
 
     private void Update()
     {
-        if (Physics.Raycast(this.transform.position, this.transform.TransformDirection(Vector3.forward), out raycastHit, raycastLength, layerMask.value))
+        if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.TransformDirection(Vector3.forward), out raycastHit, raycastLength, layerMask.value))
         {
             crossHair.GetComponent<Image>().color = Color.yellow;
             crossHair.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
