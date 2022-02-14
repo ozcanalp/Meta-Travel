@@ -4,28 +4,48 @@ using UnityEngine;
 
 public class ReceptionistSkills : MonoBehaviour
 {
-    private float distance;
-    private GameObject receptionist;
-    private Quaternion defaultRotation;
+    private float distance1;
+    private GameObject receptionist1;
+    private Quaternion defaultRotation1;
+
+    private float distance2;
+    private GameObject receptionist2;
+    private Quaternion defaultRotation2;
+
     private float turnSpeed = 2;
 
     private void Awake()
     {
-        receptionist = GameObject.Find("Receptionist");
-        defaultRotation = receptionist.transform.rotation;
+        receptionist1 = GameObject.Find("Receptionist1");
+        defaultRotation1 = receptionist1.transform.rotation;
+        receptionist2 = GameObject.Find("Receptionist2");
+        defaultRotation2 = receptionist2.transform.rotation;
     }
 
     private void Update()
     {
-        distance = Vector3.Distance(this.transform.position, receptionist.transform.position);
+        //Receptionist#1
+        distance1 = Vector3.Distance(this.transform.position, receptionist1.transform.position);
 
-        if(distance <= 6.5f)
+        if(distance1 <= 5f)
         {
-            receptionist.transform.LookAt(this.transform);
+            receptionist1.transform.LookAt(this.transform);
         }
         else
         {
-            receptionist.transform.rotation = Quaternion.Slerp(receptionist.transform.rotation, defaultRotation, turnSpeed * Time.deltaTime);
+            receptionist1.transform.rotation = Quaternion.Slerp(receptionist1.transform.rotation, defaultRotation1, turnSpeed * Time.deltaTime);
+        }
+
+        //Receptionist#2
+        distance2 = Vector3.Distance(this.transform.position, receptionist2.transform.position);
+
+        if (distance2 <= 5f)
+        {
+            receptionist2.transform.LookAt(this.transform);
+        }
+        else
+        {
+            receptionist2.transform.rotation = Quaternion.Slerp(receptionist2.transform.rotation, defaultRotation2, turnSpeed * Time.deltaTime);
         }
     }
 }
