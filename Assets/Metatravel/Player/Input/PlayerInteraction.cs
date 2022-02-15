@@ -2,18 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] GameObject mainCamera;
-    private Vector3 startPosition;
     private Transform targetPosition;
 
-    private bool isChangePosition = false;
+    public bool isChangePosition = false;
     private float turnSpeed = 2;
-    private Quaternion defaultRotation;
+    private Quaternion rotation;
 
+    [SerializeField] GameObject cursorManager;
+    [SerializeField] GameObject cameraPosition;
+    private GameObject exit;
 
+    private bool setCameraToPosition = false;
+
+    private void Awake()
+    {
+        exit = GameObject.Find("/Efe/Computer/Canvas/Exit");
+    }
     public void OnInteractionInput(InputAction.CallbackContext context)
     { 
         if (context.performed && this.GetComponent<CameraRaycast>().isHitButton)
@@ -30,9 +39,12 @@ public class PlayerInteraction : MonoBehaviour
             }
             else if (this.GetComponent<CameraRaycast>().whichButton.CompareTag("Computer"))
             {
-                startPosition = mainCamera.transform.position;
-                targetPosition = mainCamera.GetComponent<CameraRaycast>().whichButton.transform;
-                defaultRotation = mainCamera.GetComponent<CameraRaycast>().whichButton.transform.rotation;
+                targetPosition = this.GetComponent<CameraRaycast>().whichButton.transform;
+                rotation = this.GetComponent<CameraRaycast>().whichButton.transform.rotation;
+                cursorManager.GetComponent<CursorHide>().HideAndCenterCursor(false);
+                //computerScreen.SetActive(true);
+                //this.GetComponent<CameraRaycast>().whichButton;
+                this.GetComponent<CameraRaycast>().whichButton.GetComponentInChildren<Canvas>().worldCamera = this.GetComponentInChildren<Camera>();
                 isChangePosition = true;
             }
         }
@@ -42,10 +54,39 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (isChangePosition)
         {
+            if (Mathf.Abs(mainCamera.transform.position.y - targetPosition.position.y) < 0.1f)
+            {
+                mainCamera.transform.position = targetPosition.position;
+                mainCamera.transform.rotation = Quaternion.Euler(10f, rotation.eulerAngles.y - 180f, rotation.eulerAngles.z);
+                isChangePosition = false;
+            }
+
             this.GetComponent<PlayerMenu>().isMenuOpen = true;
             this.GetComponent<PlayerMenu>().isComputerUIOpen = true;
-            mainCamera.transform.rotation = Quaternion.Slerp(mainCamera.transform.rotation, Quaternion.Euler(15,defaultRotation.eulerAngles.y - 180f, defaultRotation.eulerAngles.z), turnSpeed * Time.deltaTime);
+            mainCamera.transform.rotation = Quaternion.Slerp(mainCamera.transform.rotation, Quaternion.Euler(10f, rotation.eulerAngles.y - 180f, rotation.eulerAngles.z), turnSpeed * Time.deltaTime);
             mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, new Vector3(targetPosition.position.x, targetPosition.position.y, targetPosition.position.z), 2 * Time.deltaTime);
+        }
+        //GameObject asd = this.GetComponent<CameraRaycast>().whichButton.gameObject.transform.Find("Exit");
+        if (exit.GetComponent<ButtonExit>().close)
+        {
+            this.GetComponent<PlayerMenu>().isMenuOpen = false;
+            this.GetComponent<PlayerMenu>().isComputerUIOpen = false;
+            this.GetComponent<PlayerInteraction>().isChangePosition = false;
+            cursorManager.GetComponent<CursorHide>().HideAndCenterCursor(true);
+            setCameraToPosition = true;
+            exit.GetComponent<ButtonExit>().SetCloseFalse();
+        }
+
+        if (setCameraToPosition)
+        {
+            if (Mathf.Abs(mainCamera.transform.position.y - cameraPosition.transform.position.y) < 0.1f)
+            {
+                mainCamera.transform.position = cameraPosition.transform.position;
+                setCameraToPosition = false;
+            }
+
+            mainCamera.transform.rotation = Quaternion.Slerp(mainCamera.transform.rotation, rotation, turnSpeed * Time.deltaTime);
+            mainCamera.transform.position = Vector3.MoveTowards(mainCamera.transform.position, cameraPosition.transform.position, 2 * Time.deltaTime);
         }
     }
 }
