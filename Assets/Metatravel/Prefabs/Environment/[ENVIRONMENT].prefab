@@ -355,6 +355,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1661814521090890592}
     m_Modifications:
+    - target: {fileID: 601301226081857527, guid: d7ee2c7b7dc576640879dd6f46a58a39, type: 3}
+      propertyPath: m_Name
+      value: SR1_SpawnPoint
+      objectReference: {fileID: 0}
     - target: {fileID: 2714389361540011889, guid: d7ee2c7b7dc576640879dd6f46a58a39, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -399,9 +403,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3451903207509082168, guid: d7ee2c7b7dc576640879dd6f46a58a39, type: 3}
+      propertyPath: m_Name
+      value: R2_SpawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201539612281043447, guid: d7ee2c7b7dc576640879dd6f46a58a39, type: 3}
+      propertyPath: m_Name
+      value: R1_SpawnPoint
+      objectReference: {fileID: 0}
     - target: {fileID: 7786397835204325558, guid: d7ee2c7b7dc576640879dd6f46a58a39, type: 3}
       propertyPath: m_Name
       value: Hotel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857817514170433951, guid: d7ee2c7b7dc576640879dd6f46a58a39, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857817514170433951, guid: d7ee2c7b7dc576640879dd6f46a58a39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.37
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7ee2c7b7dc576640879dd6f46a58a39, type: 3}
