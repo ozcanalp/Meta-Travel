@@ -9,6 +9,7 @@ public class PlayerMenu : MonoBehaviour
     public bool isComputerUIOpen = false;
     [SerializeField] GameObject cursorManager;
     [SerializeField] GameObject crossHair;
+    [SerializeField] GameObject stop;
 
 
     public void OnMenuInput(InputAction.CallbackContext context)
@@ -22,12 +23,14 @@ public class PlayerMenu : MonoBehaviour
         {
             cursorManager.GetComponent<CursorHide>().HideAndCenterCursor(false);
             crossHair.SetActive(false);
+            stop.SetActive(true);
             isMenuOpen = true;
         }
         else if(context.performed && isMenuOpen)
         {
             cursorManager.GetComponent<CursorHide>().HideAndCenterCursor(true);
             crossHair.SetActive(true);
+            stop.SetActive(false);
             isMenuOpen = false;
         }
     }
