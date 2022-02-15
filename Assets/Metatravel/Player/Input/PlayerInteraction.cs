@@ -57,7 +57,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (isChangePosition)
         {
-            if (Mathf.Abs(mainCamera.transform.position.y - targetPosition.position.y) < 0.1f)
+            if (Mathf.Abs(mainCamera.transform.position.y - targetPosition.position.y) < 0.05f)
             {
                 mainCamera.transform.position = targetPosition.position;
                 mainCamera.transform.rotation = Quaternion.Euler(10f, rotation.eulerAngles.y - 180f, rotation.eulerAngles.z);
@@ -84,7 +84,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (setCameraToPosition)
         {
-            if (Mathf.Abs(mainCamera.transform.position.y - cameraPosition.transform.position.y) < 0.1f)
+            if (Mathf.Abs(mainCamera.transform.position.y - cameraPosition.transform.position.y) < 0.05f)
             {
                 mainCamera.transform.position = cameraPosition.transform.position;
                 setCameraToPosition = false;
