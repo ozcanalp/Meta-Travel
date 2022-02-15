@@ -22,7 +22,7 @@ public class ReceptionistSkills : MonoBehaviour
         //Receptionist#1
         distance1 = Vector3.Distance(this.transform.position, receptionist1.transform.position);
 
-        if(distance1 <= 5f)
+        if(distance1 <= 7.5f)
         {
             receptionist1.transform.LookAt(this.transform);
         }

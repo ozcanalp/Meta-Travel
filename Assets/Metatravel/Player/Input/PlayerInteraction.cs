@@ -15,7 +15,9 @@ public class PlayerInteraction : MonoBehaviour
 
     [SerializeField] GameObject cursorManager;
     [SerializeField] GameObject cameraPosition;
+    [SerializeField] GameObject crossHair;
     private GameObject exit;
+    private GameObject emptyGameObject;
 
     private bool setCameraToPosition = false;
 
@@ -42,6 +44,7 @@ public class PlayerInteraction : MonoBehaviour
                 targetPosition = this.GetComponent<CameraRaycast>().whichButton.transform;
                 rotation = this.GetComponent<CameraRaycast>().whichButton.transform.rotation;
                 cursorManager.GetComponent<CursorHide>().HideAndCenterCursor(false);
+                crossHair.SetActive(false);
                 //computerScreen.SetActive(true);
                 //this.GetComponent<CameraRaycast>().whichButton;
                 this.GetComponent<CameraRaycast>().whichButton.GetComponentInChildren<Canvas>().worldCamera = this.GetComponentInChildren<Camera>();
@@ -73,8 +76,10 @@ public class PlayerInteraction : MonoBehaviour
             this.GetComponent<PlayerMenu>().isComputerUIOpen = false;
             this.GetComponent<PlayerInteraction>().isChangePosition = false;
             cursorManager.GetComponent<CursorHide>().HideAndCenterCursor(true);
+            crossHair.SetActive(true);
             setCameraToPosition = true;
             exit.GetComponent<ButtonExit>().SetCloseFalse();
+            this.GetComponent<CameraRaycast>().whichButton.GetComponentInChildren<Canvas>().worldCamera = null;
         }
 
         if (setCameraToPosition)
