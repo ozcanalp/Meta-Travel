@@ -8,6 +8,7 @@ public class PlayerMenu : MonoBehaviour
     public bool isMenuOpen = false;
     public bool isComputerUIOpen = false;
     [SerializeField] GameObject cursorManager;
+    [SerializeField] GameObject crossHair;
 
 
     public void OnMenuInput(InputAction.CallbackContext context)
@@ -20,11 +21,13 @@ public class PlayerMenu : MonoBehaviour
         if(context.performed && !isMenuOpen)
         {
             cursorManager.GetComponent<CursorHide>().HideAndCenterCursor(false);
+            crossHair.SetActive(false);
             isMenuOpen = true;
         }
         else if(context.performed && isMenuOpen)
         {
             cursorManager.GetComponent<CursorHide>().HideAndCenterCursor(true);
+            crossHair.SetActive(true);
             isMenuOpen = false;
         }
     }
