@@ -653,6 +653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da26f3a889e713a499441782ad0e3d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PV: {fileID: 5588714359924772066}
   isMenuOpen: 0
   isComputerUIOpen: 0
   cursorManager: {fileID: 1567120250748513496}
@@ -671,6 +672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 2116467052708200745}
+  PV: {fileID: 5588714359924772066}
   isChangePosition: 0
   cursorManager: {fileID: 1567120250748513496}
   cameraPosition: {fileID: 4102484527366566407}
@@ -733,6 +735,7 @@ MonoBehaviour:
   crossHair: {fileID: 630743814506332864}
   whichButton: {fileID: 0}
   mainCamera: {fileID: 2116467052708200745}
+  PV: {fileID: 5588714359924772066}
 --- !u!114 &2818932515592574717
 MonoBehaviour:
   m_ObjectHideFlags: 0
