@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Photon.Pun;
 
 public class PlayerMenu : MonoBehaviour
 {
+    [SerializeField] PhotonView PV;
     public bool isMenuOpen = false;
     public bool isComputerUIOpen = false;
+    private bool flag = false;
     [SerializeField] GameObject cursorManager;
     [SerializeField] GameObject crossHair;
     [SerializeField] GameObject stop;
@@ -19,19 +22,38 @@ public class PlayerMenu : MonoBehaviour
             return;
         }
 
-        if(context.performed && !isMenuOpen)
+        if(context.performed)
         {
-            cursorManager.GetComponent<CursorHide>().HideAndCenterCursor(false);
-            crossHair.SetActive(false);
-            stop.SetActive(true);
-            isMenuOpen = true;
+            flag = true;
         }
-        else if(context.performed && isMenuOpen)
+        
+    }
+
+    private void Update()
+    {
+        if (PV.IsMine)
         {
-            cursorManager.GetComponent<CursorHide>().HideAndCenterCursor(true);
-            crossHair.SetActive(true);
-            stop.SetActive(false);
-            isMenuOpen = false;
+            if (flag)
+            {
+                if (!isMenuOpen)
+                {
+                    cursorManager.GetComponent<CursorHide>().HideAndCenterCursor(false);
+                    crossHair.SetActive(false);
+                    stop.SetActive(true);
+                    isMenuOpen = true;
+                    flag = false;
+                }
+                else if (isMenuOpen)
+                {
+                    cursorManager.GetComponent<CursorHide>().HideAndCenterCursor(true);
+                    crossHair.SetActive(true);
+                    stop.SetActive(false);
+                    isMenuOpen = false;
+                    flag = false;
+                }
+            }
         }
+        
+        
     }
 }
