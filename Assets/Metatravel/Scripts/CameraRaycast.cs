@@ -6,14 +6,15 @@ using Photon.Pun;
 
 public class CameraRaycast : MonoBehaviour
 {
-    private float raycastLength = 5;
-    private RaycastHit raycastHit;
-    [SerializeField] LayerMask layerMask;
-    public bool isHitButton;
-    [SerializeField] GameObject crossHair;
-    public GameObject whichButton;
-    [SerializeField] GameObject mainCamera;
     [SerializeField] PhotonView PV;
+
+    [SerializeField] GameObject crossHair;
+    [SerializeField] GameObject mainCamera;
+    [SerializeField] LayerMask layerMask;
+    public GameObject whichButton;
+    private RaycastHit raycastHit;
+    private float raycastLength = 5;
+    public bool isHitButton;
 
 
     private void Update()
@@ -33,7 +34,6 @@ public class CameraRaycast : MonoBehaviour
                 crossHair.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
                 isHitButton = false;
             }
-        }
-        
+        }   
     }
 }
