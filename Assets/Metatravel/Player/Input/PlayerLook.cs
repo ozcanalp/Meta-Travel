@@ -7,10 +7,11 @@ using Photon.Pun;
 public class PlayerLook : MonoBehaviour
 {
     [SerializeField] PhotonView PV;
-    //[SerializeField] private Transform playerTransform;
+
     [SerializeField] Camera playerCam;
     private float mouseSensivity = 250f;
     private float rotation = 0f;
+
 
     private void Start()
     {

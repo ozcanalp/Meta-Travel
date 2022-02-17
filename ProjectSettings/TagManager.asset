@@ -8,6 +8,7 @@ TagManager:
   - Button
   - Button2
   - Computer
+  - Ring
   layers:
   - Default
   - TransparentFX

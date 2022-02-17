@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Photon.Pun;
 
 public class PlayerMenu : MonoBehaviour
 {
+    [SerializeField] PhotonView PV;
+
+    [SerializeField] GameObject cursorManager;
+    [SerializeField] GameObject stop;
+    [SerializeField] GameObject crossHair;
+
     public bool isMenuOpen = false;
     public bool isComputerUIOpen = false;
-    [SerializeField] GameObject cursorManager;
-    [SerializeField] GameObject crossHair;
-    [SerializeField] GameObject stop;
+    private bool flag = false;
 
 
     public void OnMenuInput(InputAction.CallbackContext context)
@@ -19,19 +24,37 @@ public class PlayerMenu : MonoBehaviour
             return;
         }
 
-        if(context.performed && !isMenuOpen)
+        if(context.performed)
         {
-            cursorManager.GetComponent<CursorHide>().HideAndCenterCursor(false);
-            crossHair.SetActive(false);
-            stop.SetActive(true);
-            isMenuOpen = true;
-        }
-        else if(context.performed && isMenuOpen)
+            if (PV.IsMine)
+                flag = true;
+            
+        }  
+    }
+
+    private void Update()
+    {
+        if (PV.IsMine)
         {
-            cursorManager.GetComponent<CursorHide>().HideAndCenterCursor(true);
-            crossHair.SetActive(true);
-            stop.SetActive(false);
-            isMenuOpen = false;
-        }
+            if (flag)
+            {
+                if (!isMenuOpen)
+                {
+                    cursorManager.GetComponent<CursorHide>().HideAndCenterCursor(false);
+                    crossHair.SetActive(false);
+                    stop.SetActive(true);
+                    isMenuOpen = true;
+                    flag = false;
+                }
+                else if (isMenuOpen)
+                {
+                    cursorManager.GetComponent<CursorHide>().HideAndCenterCursor(true);
+                    crossHair.SetActive(true);
+                    stop.SetActive(false);
+                    isMenuOpen = false;
+                    flag = false;
+                }
+            }
+        }    
     }
 }

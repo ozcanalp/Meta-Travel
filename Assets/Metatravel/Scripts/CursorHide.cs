@@ -15,14 +15,12 @@ public class CursorHide : MonoBehaviour
         if (hide)
         {
             Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-            
+            Cursor.lockState = CursorLockMode.Locked;  
         }
         else if (!hide)
         {
             Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-            
+            Cursor.lockState = CursorLockMode.None;   
         }
     }
 }
