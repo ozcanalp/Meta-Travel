@@ -1746,6 +1746,7 @@ GameObject:
   - component: {fileID: 8119250852175062230}
   - component: {fileID: 380138331720241359}
   - component: {fileID: 2151145143357160350}
+  - component: {fileID: 8220368267592538884}
   m_Layer: 7
   m_Name: BookRoom1
   m_TagString: Untagged
@@ -1855,7 +1856,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2151145143357160350}
+      - m_Target: {fileID: 8220368267592538884}
         m_TargetAssemblyTypeName: BookManager, Assembly-CSharp
         m_MethodName: BookKingSuit
         m_Mode: 1
@@ -1904,6 +1905,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &2151145143357160350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563629033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1016eb288484b0f45812446c38877b89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8220368267592538884
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2648,8 +2661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1931664124, guid: ae89643504a8c0849a1932f4ac860f64, type: 3}
       propertyPath: m_text
-      value: I would lIke to help you make a reservatIon usIng the Near Protocol
-        Infrastructure.
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1931664124, guid: ae89643504a8c0849a1932f4ac860f64, type: 3}
       propertyPath: m_fontSize
@@ -2685,7 +2697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1931664125, guid: ae89643504a8c0849a1932f4ac860f64, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4546689169536898275, guid: ae89643504a8c0849a1932f4ac860f64, type: 3}
       propertyPath: m_Name
