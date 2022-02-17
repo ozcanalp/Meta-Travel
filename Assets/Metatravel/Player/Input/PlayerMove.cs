@@ -7,10 +7,12 @@ using Photon.Pun;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] PhotonView PV;
+
     private Vector2 move;
     private Vector3 movement;
     private float walkSpeed = 6f;
     private Rigidbody rigidBody;
+
 
     private void Start()
     {
@@ -35,9 +37,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Movements()
     {
-        //movement = new Vector3(move.x, 0f, move.y);
         movement = transform.right * move.x + transform.forward * move.y;
-        //controller.Move(movement * walkSpeed * Time.deltaTime);
         rigidBody.MovePosition(transform.position + movement * walkSpeed * Time.deltaTime);
     }
 
