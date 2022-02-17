@@ -7,12 +7,14 @@ using Photon.Pun;
 public class PlayerMenu : MonoBehaviour
 {
     [SerializeField] PhotonView PV;
+
+    [SerializeField] GameObject cursorManager;
+    [SerializeField] GameObject stop;
+    [SerializeField] GameObject crossHair;
+
     public bool isMenuOpen = false;
     public bool isComputerUIOpen = false;
     private bool flag = false;
-    [SerializeField] GameObject cursorManager;
-    [SerializeField] GameObject crossHair;
-    [SerializeField] GameObject stop;
 
 
     public void OnMenuInput(InputAction.CallbackContext context)
@@ -24,9 +26,10 @@ public class PlayerMenu : MonoBehaviour
 
         if(context.performed)
         {
-            flag = true;
-        }
-        
+            if (PV.IsMine)
+                flag = true;
+            
+        }  
     }
 
     private void Update()
@@ -52,8 +55,6 @@ public class PlayerMenu : MonoBehaviour
                     flag = false;
                 }
             }
-        }
-        
-        
+        }    
     }
 }
