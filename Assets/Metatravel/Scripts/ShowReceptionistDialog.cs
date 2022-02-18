@@ -67,16 +67,16 @@ public class ShowReceptionistDialog : MonoBehaviour
             {
                 txt.text = "I am the receptIonIst.";
             }
-            else if (showTime < 27f)
+            else if (showTime < 27.5f)
             {
                 bubble.transform.GetChild(3).gameObject.SetActive(true);
                 txt.text = "HELLO AND WELCOME TO NEAR HOTEL...";
             }
-            else if (showTime < 28f)
+            else if (showTime < 28.5f)
             {
                 bubble.transform.GetChild(2).gameObject.SetActive(true);
             }
-            else if (showTime < 29f)
+            else if (showTime < 29.5f)
             {
                 bubble.transform.GetChild(1).gameObject.SetActive(true);
             }
