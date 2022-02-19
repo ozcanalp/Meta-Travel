@@ -6,6 +6,7 @@ using TMPro;
 public class ShowReceptionistDialog : MonoBehaviour
 {
     private GameObject receptionistDialog;
+    private GameObject bubble;
     public float showTime = 0f;
     private float time = 30f;
     private TMP_Text txt;
@@ -17,6 +18,8 @@ public class ShowReceptionistDialog : MonoBehaviour
     {
         receptionistDialog = GameObject.Find("/Efe/Receptionist1/Dialog");
         txt = receptionistDialog.GetComponent<TMP_Text>();
+
+        bubble = GameObject.Find("/Efe/Receptionist1/Bubble");
     }
 
     private void Update()
@@ -30,9 +33,13 @@ public class ShowReceptionistDialog : MonoBehaviour
     public void SetShow()
     {
         show = true;
-        txt.text = "HELLO AND WELCOME TO NEAR HOTEL...";
         showTime = 30f;
         receptionistDialog.GetComponent<MeshRenderer>().enabled = true;
+        bubble.transform.GetChild(0).gameObject.SetActive(false);
+        bubble.transform.GetChild(1).gameObject.SetActive(false);
+        bubble.transform.GetChild(2).gameObject.SetActive(false);
+        bubble.transform.GetChild(3).gameObject.SetActive(false);
+        txt.text = "";
     }
 
     private void ShowDialogReceptionist()
@@ -60,10 +67,31 @@ public class ShowReceptionistDialog : MonoBehaviour
             {
                 txt.text = "I am the receptIonIst.";
             }
+            else if (showTime < 27.5f)
+            {
+                bubble.transform.GetChild(3).gameObject.SetActive(true);
+                txt.text = "HELLO AND WELCOME TO NEAR HOTEL...";
+            }
+            else if (showTime < 28.5f)
+            {
+                bubble.transform.GetChild(2).gameObject.SetActive(true);
+            }
+            else if (showTime < 29.5f)
+            {
+                bubble.transform.GetChild(1).gameObject.SetActive(true);
+            }
+            else if (showTime < 30f)
+            {
+                bubble.transform.GetChild(0).gameObject.SetActive(true);
+            }
         }
         else if (showTime <= 0)
         {
             receptionistDialog.GetComponent<MeshRenderer>().enabled = false;
+            bubble.transform.GetChild(0).gameObject.SetActive(false);
+            bubble.transform.GetChild(1).gameObject.SetActive(false);
+            bubble.transform.GetChild(2).gameObject.SetActive(false);
+            bubble.transform.GetChild(3).gameObject.SetActive(false);
             show = false;
         }
     }

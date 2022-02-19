@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BookManager : MonoBehaviour
 {
-   public void BookKingSuit()
+    [SerializeField] private string url;
+
+   public void BookRoom()
    {
-       Application.OpenURL("https://unity.com");
+       Application.OpenURL(url);
    }
 }

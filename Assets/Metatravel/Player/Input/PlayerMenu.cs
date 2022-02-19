@@ -11,6 +11,7 @@ public class PlayerMenu : MonoBehaviour
     [SerializeField] GameObject cursorManager;
     [SerializeField] GameObject stop;
     [SerializeField] GameObject crossHair;
+    [SerializeField] private GameObject panel;
 
     public bool isMenuOpen = false;
     public bool isComputerUIOpen = false;
@@ -27,7 +28,10 @@ public class PlayerMenu : MonoBehaviour
         if(context.performed)
         {
             if (PV.IsMine)
+            {
                 flag = true;
+                panel.SetActive(false);
+            }
             
         }  
     }

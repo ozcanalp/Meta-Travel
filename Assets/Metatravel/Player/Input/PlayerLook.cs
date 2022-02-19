@@ -10,6 +10,7 @@ public class PlayerLook : MonoBehaviour
 
     [SerializeField] Camera playerCam;
     private float mouseSensivity = 250f;
+    private float sensetivity;
     private float rotation = 0f;
 
 
@@ -18,6 +19,11 @@ public class PlayerLook : MonoBehaviour
         if (!PV.IsMine)
         {
             playerCam.gameObject.SetActive(false);
+        }
+
+        if (PV.IsMine)
+        {
+            sensetivity = 250f;
         }
     }
 
@@ -36,6 +42,13 @@ public class PlayerLook : MonoBehaviour
 
             playerCam.transform.localRotation = Quaternion.Euler(rotation, 0f, 0f);
             transform.Rotate(Vector3.up * mouseX);
+            mouseSensivity = sensetivity;
         }
+    }
+
+    public void SetMouseSensetivity(float newSensetivity)
+    {
+        if (PV.IsMine)
+            sensetivity = newSensetivity;
     }
 }
