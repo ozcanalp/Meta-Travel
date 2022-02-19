@@ -407,6 +407,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: R2_SpawnPoint
       objectReference: {fileID: 0}
+    - target: {fileID: 5073928584066406923, guid: d7ee2c7b7dc576640879dd6f46a58a39, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0368116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073928584066406923, guid: d7ee2c7b7dc576640879dd6f46a58a39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 77.205
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073928584567557793, guid: d7ee2c7b7dc576640879dd6f46a58a39, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0374941
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073928584567557793, guid: d7ee2c7b7dc576640879dd6f46a58a39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 79.3655
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077031623981858767, guid: d7ee2c7b7dc576640879dd6f46a58a39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 66.243
+      objectReference: {fileID: 0}
     - target: {fileID: 5201539612281043447, guid: d7ee2c7b7dc576640879dd6f46a58a39, type: 3}
       propertyPath: m_Name
       value: R1_SpawnPoint
