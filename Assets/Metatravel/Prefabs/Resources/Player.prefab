@@ -601,7 +601,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fa7a39db070a7f04fbb2b130d0bd6d4c, type: 2}
+  - {fileID: 2100000, guid: 8e9c8a96cd98c7341836338ca3b794cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -644,6 +644,7 @@ GameObject:
   - component: {fileID: 2818932515592574717}
   - component: {fileID: 8722874041465867892}
   - component: {fileID: 4929773171076797532}
+  - component: {fileID: 7613619226680527320}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -927,6 +928,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showTime: 0
+--- !u!114 &7613619226680527320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116467052677308077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a34f874a8234ce469ac03fb33cdb297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PV: {fileID: 5588714359924772066}
+  hatFront: {fileID: 1985643106962244121}
+  hatTop: {fileID: 739162410565605209}
 --- !u!1 &2116467052708200745
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,7 +1006,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 247
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1061,7 +1077,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2798573153741320927
 Transform:
   m_ObjectHideFlags: 0
@@ -1140,7 +1156,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9130831074652272525
 Transform:
   m_ObjectHideFlags: 0
