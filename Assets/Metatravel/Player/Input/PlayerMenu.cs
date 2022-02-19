@@ -20,20 +20,19 @@ public class PlayerMenu : MonoBehaviour
 
     public void OnMenuInput(InputAction.CallbackContext context)
     {
-        if (isComputerUIOpen)
+        if (PV.IsMine)
         {
-            return;
-        }
+            if (isComputerUIOpen)
+            {
+                return;
+            }
 
-        if(context.performed)
-        {
-            if (PV.IsMine)
+            if (context.performed)
             {
                 flag = true;
                 panel.SetActive(false);
             }
-            
-        }  
+        }
     }
 
     private void Update()
