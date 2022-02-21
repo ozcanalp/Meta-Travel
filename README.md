@@ -1,4 +1,4 @@
-
+# Meta Travel
 ## Inspiration
 Nowadays, with the increasing digitalization, various technical problems can be experienced. A few of our team members had problems with various reservations they made. For example, 'Erinc' once went to the hotel that he had made a reservation for, and said that the hotel reservation was not made. Emre also experienced another unpleasant problem in the car reservation. Since the data transfer here is collected in a single center, it is very difficult to prove that the transactions are done. We developed our plan to make reservations through a **decentralized** and **sustainable** technology, thanks to the **Near Protocol** infrastructure.
 ## What it does
