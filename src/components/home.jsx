@@ -19,9 +19,9 @@ import {
   Link
 
 } from "react-router-dom";
-import deluxe from "../assets/roomImages/deluxe-suit.png"
-import master from "../assets/roomImages/master-suit.png"
-import superior from "../assets/roomImages/superior-room.png"
+import deluxe from "../assets/roomImages/2.jpg"
+import master from "../assets/roomImages/0.jpg"
+import superior from "../assets/roomImages/1.jpg"
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -39,13 +39,13 @@ function Copyright() {
 }
 
 const cards = [{
-image:deluxe,name:"deluxe room",city:"Antalya",id:2
+image:deluxe,name:"Deluxe Room",city:"Antalya",id:2
 
 },{
-    image:master,name:"master room",city:"Antalya",id:0
+    image:master,name:"Master Room",city:"Antalya",id:0
     
     },{
-        image:superior,name:"superior room",city:"Antalya",id:1
+        image:superior,name:"Superior Room",city:"Antalya",id:1
         
         }];
 
@@ -59,7 +59,7 @@ export default function Album() {
       <main>
         {/* Hero unit */}
        
-          <Container maxWidth="sm">
+          <Container maxWidth="md">
             <Typography
               component="h1"
               variant="h2"
@@ -70,8 +70,11 @@ export default function Album() {
              <span style={{color:"#1976d2"}}> META</span>TRAVEL
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
-            Metaverse where you can buy nft and book rooms 
+            A new generation hotel reservation system powered by Near Protocol.
+
             </Typography>
+          <div className="nearContainer"> <img style={{width:"30%",alignSelf:"center"}} src="/near_logo.png"></img></div>
+       
             <Stack
               sx={{ pt: 4 }}
               direction="row"
@@ -93,21 +96,30 @@ export default function Album() {
               </Grid>
             ))}
           </Grid>
+         
         </Container>
+        <Container maxWidth="md">
+          <Typography className="mt-1_" variant="h5" align="center" color="text.secondary" paragraph>
+            By making hotel reservations with the Near Protocol infrastructure, you will protect your reservation at the maximum level.
 
+            </Typography>
+            <Typography variant="h5" align="center" color="text.secondary" paragraph>
+         
+If you are undecided about choosing a hotel room or if you are looking for a new experience, you can take a virtual tour of the hotel rooms on the web.
+
+              </Typography>
+              </Container>
       </main>
       {/* Footer */}
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
+       
         <Typography
           variant="subtitle1"
           align="center"
           color="text.secondary"
           component="p"
         >
-         Metatravel
+         METATRAVEL
         </Typography>
       
       </Box>

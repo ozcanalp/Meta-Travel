@@ -103,10 +103,15 @@
   align-items: center;
 }
 
-
+.nearContainer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .navButton{
   margin: 1rem !important;
-  width: 100px;
+ padding: 0px 10px;
   height: 40px;
   background-color: black;
   border-radius: 10px;
@@ -213,7 +218,9 @@ a{
   height: 99vh;
   
 }
-
+.mt-1_{
+  margin-top: 5rem !important;
+}
 .purpleBox{
   background-color: black;
   padding: 1rem;

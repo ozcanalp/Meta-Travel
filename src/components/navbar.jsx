@@ -15,10 +15,10 @@ const Nav = ({signOut,user,signIn}) => {
   return (
     <Fragment>
       <div className="space-between navbarContainer">
-      <Link to="/" className="left">
+      <Link to="/" className="left center">
      
-
-          Metatravel
+<img style={{width:30,margin:10}} src={"/logo.png"} alt="logo"></img>
+<span style={{color:"#1976d2"}}> META</span>TRAVEL
          
               </Link>
           {user? <div className="center">
@@ -52,7 +52,7 @@ const Nav = ({signOut,user,signIn}) => {
                        color="primary"
                        onClick={()=>signIn()}
                      >
-                       Connect 
+                       Connect to Near
                      </div>
                      </div>}
       </div>

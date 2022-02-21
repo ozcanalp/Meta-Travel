@@ -1,6 +1,7 @@
-import deluxe from "../assets/roomImages/deluxe-suit.png";
-import master from "../assets/roomImages/master-suit.png";
-import superior from "../assets/roomImages/superior-room.png";
+import deluxe from "../assets/roomImages/2.jpg"
+import master from "../assets/roomImages/0.jpg"
+import superior from "../assets/roomImages/1.jpg"
+
 const roomData = [
   {
     images: [
@@ -9,7 +10,7 @@ const roomData = [
         thumbnail: master,
       },
     ],
-    name: "master suit room",
+    name: "Master Suit Room",
     city: "Antalya",
     roomId: 0,
   },
@@ -20,7 +21,7 @@ const roomData = [
         thumbnail: superior,
       },
     ],
-    name: "superior room",
+    name: "Superior room",
     city: "Antalya",
     roomId: 1,
   },
@@ -31,7 +32,7 @@ const roomData = [
         thumbnail: deluxe,
       },
     ],
-    name: "deluxe suit room",
+    name: "Deluxe Suit Room",
     city: "Antalya",
     roomId: 2,
   },
